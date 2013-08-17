@@ -1,0 +1,42 @@
+body{
+	font-size:100%;
+}
+h1, h2, h3{
+	font-family:"Georgia";
+	text-align: center;
+
+}
+.header__logo h1{
+	font-size: 2.5em;
+	margin: 0px 20px 0px 20px;
+}
+.header__logo a:visited{
+	color: black;
+}
+.red{
+	color: red;
+}
+.header__logo h3{
+	font-size: 1.5em;
+	margin: 0px 20px 0px 20px;
+	color: #f00;
+}
+.header__shri h2{
+	min-width: 320px;
+	font-size: 1.5em;
+	margin: 0px 20px 0px 20px;
+}
+.main{
+	min-width: 320px;
+	max-width: 520px; 
+	margin: 10px 200px 10px 200px;
+}
+.main__form_table textarea{
+	width: 100%;
+	max-width: 380px;
+}
+
+.main__form_table{
+
+}
+
