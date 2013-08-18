@@ -6,9 +6,12 @@ h1, h2, h3{
 	text-align: center;
 
 }
+.header__logo{
+	max-width: 200px;
+}
 .header__logo h1{
 	font-size: 2.5em;
-	margin: 0px 20px 0px 20px;
+	margin: 0px 0px 0px 0px;
 }
 .header__logo a:visited{
 	color: black;
@@ -16,15 +19,20 @@ h1, h2, h3{
 .red{
 	color: red;
 }
+.header{
+	max-width: 520px; 
+}
+.header__shri{
+	max-width: 380px;
+}
 .header__logo h3{
-	font-size: 1.5em;
-	margin: 0px 20px 0px 20px;
+	font-size: 1.25em;
+	margin: 0px 0px 0px 0px;
 	color: #f00;
 }
 .header__shri h2{
-	min-width: 320px;
 	font-size: 1.5em;
-	margin: 0px 20px 0px 20px;
+	margin: 0px 0px 0px 0px;
 }
 .main{
 	min-width: 320px;
@@ -39,4 +47,68 @@ h1, h2, h3{
 .main__form_table{
 
 }
+/******************/
+.main-fastInput{
+	box-shadow:  3px 3px 15px 2px  rgba(0,0,0,0.2);
+	border-radius: 4px;
+	background-color: #ffc;
+	padding: 5px 5px 2px 5px;
+	z-index: 0;
+	margin: 0px 0px 20px 0px;
+}
 
+.main-fastInput h2{
+	margin: auto;
+	font-size: 1.15em;
+}
+.main-fastInput__taWrap textarea{
+	width: 97%;
+	max-width: 520px;
+}
+.main-fastInput--lbl{
+	min-height: 48px;
+	font-family: "Arial", sans-serif;
+	font-weight: normal;
+	margin: 3px 0px 3px 0px;
+}
+.main-fastInput__status{
+
+}
+.main-fastInput__status--table{
+	width: 100%;
+	background-color: #B2DFFF;
+	border-radius: 4px;
+	box-shadow: inset  3px 3px 10px 2px  rgba(0,0,0,0.2);
+	text-align: center;
+	margin-top: 3px;
+}
+.main-fastInput__status--table {
+}
+
+/*********************/
+.main-form__qstion_tbl {
+	width: 100%;
+	min-width: 320px;
+	max-width: 520px; 
+}
+
+
+.main-form__qstion{
+	box-shadow:  3px 3px 15px 2px  rgba(0,0,0,0.2);
+	border-radius: 4px;
+	background-color: #eef;
+}
+.main-form__qstion_taWrap{
+
+}
+.main-form__qstion--req{
+	color: red;
+	margin: 10px;
+}
+.main-form__qstion_tbl textarea{
+	width: 97%;
+}
+.main-form__qstion:hover{
+	box-shadow:  3px 3px 15px 10px  rgba(0,0,0,0.2);
+	background-color: #ffc;
+}

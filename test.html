@@ -2,22 +2,21 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<link rel="stylesheet" type="text/css" href="style_main.css"></link>
+		<link rel="stylesheet" type="text/css" href="style_main.css">
 		<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="scripts.js"></script>
 	</head>
 	<body>
 		<div hidden="true" class="header_wrap_div">
-			<a href="http://yandex.ru"><h1><span class="red">Y</span>andex</h1></a>
+			<a href="http://yandex.ru"><h1><span class="red">Я</span>andex</h1></a>
 			<h3>Компания</h3>		
 			<h2>Школа разработчиков интерфейсов</h2>
 		</div>
 		<table class="header">
-			<col width="130" >
-   			<col width="260" >
+			<col width="110">
 			<tr>
 				<td class="header__logo">
-					<h1 class="header"><a href="http://yandex.ru"><span class="red">Y</span>andex</a></h1>
+					<h1><a href="http://yandex.ru"><span class="red">Я</span>ндекс</a></h1>
 					<h3><a href="http://yandex.ru">Компания</a></h3>
 				</td>
 				<td class="header__shri">
@@ -26,20 +25,107 @@
 			</tr>
 		</table>
 		<div class="main">
-			<div hidden="true" class="main__fastInput" id="Inputer">
+			<div hidden="true" class="main-fastInput" id="Inputer">
 					<div>
-						<label for="fast_input_ta">Окно быстрого ввода</label>
+						<h2>Окно быстрых ответов</h2>
+					</div>
+					<div class="main-fastInput--lbl">
+						<label id="main-fastInput_lbl" for="fast_input_ta">Окно быстрого ввода</label>
+					</div>
+					<div class="main-fastInput__taWrap">
+						<textarea class="main-fastInput__taWrap_ta" id="main-fastInput--ta"></textarea>
 					</div>
 					<div>
-						<label id="main__fastInput_lbl" for="fast_input_ta">Окно быстрого ввода</label>
+						<button id="main-fastInput--sendBtn">Принять</button>
 					</div>
-					<textarea  id="main__fastInput_ta"></textarea>
-					<button id="main_fastInput-sendBtn">Принять</button>
+					<div class="main-fastInput__status">
+						<table class="main-fastInput__status--table">
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>5</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+			</div>
+			<div class="main-form">
+				<div class="main-form__qstion">
+					<table class="main-form__qstion_tbl">
+						<col width="110">
+						<tbody>
+							<tr>
+								<td>
+									<div>
+										<p>1/15</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<label>Ваше Ф.И.О.</label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="main-form__qstion--req">
+										<p>*</p>
+									</div>
+								</td>
+								<td>
+									<div class="main-form__qstion_taWrap">
+										<textarea></textarea>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div>
+					<hr/>
+				</div>
+				<div class="main-form__qstion">
+					<table>
+						<col width="110">
+						<tbody>
+							<tr>
+								<td>
+									<div>
+										<p>1/15</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<label>Ваше Ф.И.О.</label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>
+										<p>*</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<textarea></textarea>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div>
+					<hr/>
+				</div>
 			</div>
 			<div class="main__form">
 				<form>
 					<table class="main__form_table">
-						<col width="130">
+						<col width="110">
 						<tbody>
 
 	   						<!--col width="260"-->

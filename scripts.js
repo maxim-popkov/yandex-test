@@ -37,7 +37,7 @@
 
 		};
 		Inputer.prototype.submit = function () {
-			var txtArea = document.getElementById('main__fastInput_ta');
+			var txtArea = document.getElementById('main-fastInput--ta');
 			var outElem = $(".main__form_table textarea:eq(" + this.curr_field + " )");
 
 			//todo verify
@@ -66,7 +66,7 @@
 				nextFieldNum = i;
 				this.curr_field = i;
 			};
-			var outElem = document.getElementById('main__fastInput_lbl');
+			var outElem = document.getElementById('main-fastInput_lbl');
 			outElem.innerText = $(".main__form_table label:eq(" + nextFieldNum + " )").text();
 
 		}
@@ -76,7 +76,7 @@
 
 	window.onload = function init(){
 		var inputerDiv = document.getElementById('Inputer');
-		var sendBtn = document.getElementById('main_fastInput-sendBtn');
+		var sendBtn = document.getElementById('main-fastInput--sendBtn');
 		var inputer = new Inputer(inputerDiv, sendBtn,"abra",0,0,15);
 		inputer.showInputer();
 		inputer.showNextQst();
