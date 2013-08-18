@@ -25,6 +25,7 @@
 			</tr>
 		</table>
 		<div class="main">
+			<!-- Fast Input Block Start -->
 			<div hidden="true" class="main-fastInput" id="Inputer">
 					<div>
 						<h2>Окно быстрых ответов</h2>
@@ -32,6 +33,11 @@
 					<div class="main-fastInput--lbl">
 						<label id="main-fastInput_lbl" for="fast_input_ta">Окно быстрого ввода</label>
 					</div>
+					<!--<div>
+						<input name="your_name" value="your_value" type="checkbox">
+						<label>Some text</label>
+					</div>
+					-->
 					<div class="main-fastInput__taWrap">
 						<textarea class="main-fastInput__taWrap_ta" id="main-fastInput--ta"></textarea>
 					</div>
@@ -52,7 +58,11 @@
 						</table>
 					</div>
 			</div>
+			<!-- Fast Input Block Finish-->
+			<!-- Main Form Start-->
 			<div class="main-form">
+				<form>
+				<!-- Question Start-->
 				<div class="main-form__qstion">
 					<table class="main-form__qstion_tbl">
 						<col width="110">
@@ -65,7 +75,7 @@
 								</td>
 								<td>
 									<div>
-										<label>Ваше Ф.И.О.</label>
+										<label class="main-form__qstion--lbl" for="main-form_qst_3">Ваше Ф.И.О.</label>
 									</div>
 								</td>
 							</tr>
@@ -77,18 +87,17 @@
 								</td>
 								<td>
 									<div class="main-form__qstion_taWrap">
-										<textarea></textarea>
+										<textarea class="main-form__qstion--ta" id="main-form_qst_3"></textarea>
 									</div>
 								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
-				<div>
-					<hr/>
-				</div>
+				<!-- Question Finish-->
+				<!-- Question Start-->
 				<div class="main-form__qstion">
-					<table>
+					<table class="main-form__qstion_tbl">
 						<col width="110">
 						<tbody>
 							<tr>
@@ -99,147 +108,66 @@
 								</td>
 								<td>
 									<div>
-										<label>Ваше Ф.И.О.</label>
+										<label class="main-form__qstion--lbl" for="main-form_qst_3">Ваше Ф.И.О.</label>
 									</div>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<div>
+									<div class="main-form__qstion--req">
 										<p>*</p>
 									</div>
 								</td>
 								<td>
-									<div>
-										<textarea></textarea>
+									<div class="main-form__qstion_taWrap">
+										<textarea class="main-form__qstion--ta" id="main-form_qst_3"></textarea>
 									</div>
 								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
-				<div>
-					<hr/>
-				</div>
-			</div>
-			<div class="main__form">
-				<form>
-					<table class="main__form_table">
+				<!-- Question Finish-->
+				<!-- Question Start-->
+				<div class="main-form__qstion">
+					<table class="main-form__qstion_tbl">
 						<col width="110">
 						<tbody>
-
-	   						<!--col width="260"-->
 							<tr>
-								<td class="main__form_lftClmn">
-									<p>1/15</p>
+								<td>
+									<div>
+										<p>3/15</p>
+									</div>
 								</td>
-								<td class="main__form_rhtClmn">
-									<label>Ваше Ф.И.О.</label>
+								<td>
+									<div>
+										<label class="main-form__qstion--lbl" for="main-form_qst_3">Ваше Ф.И.О.</label>
+									</div>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									*
+									<div class="main-form__qstion--req">
+										<p>*</p>
+									</div>
 								</td>
 								<td>
-									<textarea></textarea>
+									<div class="main-form__qstion_lblWrap">
+										<input name="your_name" value="your_value" type="checkbox">
+										<label>Some text</label>
+									</div>
+									<div class="main-form__qstion_taWrap">
+										<textarea class="main-form__qstion--ta" id="main-form_qst_3"></textarea>
+									</div>
 								</td>
 							</tr>
-							<tr>
-								<td colspan="2">
-									<hr/>
-								</td>
-							</tr>
-							<tr>
-								<td class="main--form_rhtClmn">
-									<p>2/15</p>
-								</td>
-								<td>
-									<label for="first_name">Имя</label>	
-								</td>
-							</tr>
-							<tr>
-								<td>
-								</td>
-								<td>
-									<textarea id="first_name"></textarea>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<hr/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p>3/15</p>
-								</td>
-								<td>
-									<label for="first_name">Расскажите о вашем опыте разработки. Нам будет интересно всё — как серьезный интерфейс, так и просто домашняя страничка.</label>	
-								</td>
-							</tr>
-							<tr>
-								<td>
-								</td>
-								<td>
-									<textarea id="first_name"></textarea>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<hr/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p>4/15</p>
-								</td>
-								<td>
-									<p>Формулировка вопроса</p>
-											
-								</td>
-							</tr>
-							<tr>
-								<td>
-								</td>
-								<td>
-									<input type="file"></input>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<hr/>
-								</td>
-							</tr>
-							
 						</tbody>
-						<tfoot>
-							<tr>
-								<td>
-									<p>Вопрос</p>
-								</td>
-								<td>
-									<p>Формулировка вопроса</p>
-											
-								</td>
-							</tr>
-							<tr>
-								<td>
-								</td>
-								<td>
-									<input type="submit"></input>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<hr/>
-								</td>
-							</tr>
-						</tfoot>
-						
 					</table>
+				</div>
+				<!-- Question Finish-->	
 				</form>
 			</div>
+			<!-- Main Form Finish-->
 		</div>
 	</body>
 </html>
