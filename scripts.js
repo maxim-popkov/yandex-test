@@ -16,7 +16,8 @@
 			this.answered = answered;
 			this.qst = Array(questions);
 			this.sendBtn = sendBtn;
-
+			this.txtArea = document.getElementById('main-fastInput--ta');
+			this.txtArea.focus();
 			while (--questions >= 0) {
      		   this.qst[questions] = false;
     		}
@@ -26,31 +27,40 @@
 			
 			this.sendBtn.addEventListener("click",this.submit.bind(this, false));
 			$(".main-form__qstion--ta").bind("input propertychange", this.txtChanged.bind(this));
+			$(document).keypress(this.pressEnter.bind(this));
 		};
+		Inputer.prototype.pressEnter = function(e){
+			if(e.which == 13) {
+				e.preventDefault();
+        		this.submit();
+   			}
+		}
 		Inputer.prototype.txtChanged = function(e){
 			var getNumStr = e.target.id.replace( /^\D+/g, '');
 			var qstNum = parseInt(getNumStr, 10);
-			if($(e.target).val().length){
+			var testStr = $(e.target).val().replace(/\s/g, "");
+			if(testStr.length){
 				this.changeStatus(qstNum, true);
 			}else{
 				this.changeStatus(qstNum, false);;
 			}
 		};
 		Inputer.prototype.changeStatus = function (num, status) {
+
 			var tdElem = $(".main-fastInput__status--table td").eq(num);
 			if(status){
 				tdElem.removeClass('main-fastInput__status--td').addClass('main-fastInput__status--tdOk');
+				this.answered++;
 			}else{
 				tdElem.removeClass('main-fastInput__status--tdOk').addClass('main-fastInput__status--td');
+				this.answered--;
 			}
-			console.log(num === this.curr_field);
-			console.log(num );
-			console.log(this.curr_field);
 			var reDraw = (num === this.curr_field) || (this.isFinished() && status === false); 
+			this.qst[num] = status;
 			if (reDraw) {
-				this.qst[num] = status;
 				this.showNextQst();
-			}			
+			}
+
 		};
 		Inputer.prototype.isFinished = function () {
 			var i = this.qst.length;
@@ -65,7 +75,15 @@
 			$(".main-fastInput__taWrap").hide();
 			var outLbl = document.getElementById("main-fastInput_lbl");
 			//this.sendBtn.innerHTML = "в Яндекс!";
-			outLbl.innerHTML = "Отправить данные в Яндекс"; 
+			$(this.sendBtn).hide();
+			outLbl.innerHTML = "<a href='#lastWay'>Отправить данные в Яндекс</a>"; 
+			//////////////
+			$('a').click(function(){
+    				$('html, body').animate({
+    			    	scrollTop: $( $.attr(this, 'href') ).offset().top
+    				}, 500);
+    			return false;
+			});
 
 		};
 
@@ -79,7 +97,7 @@
 			while(this.qst[i] == true && i < this.qst.length){
 				i++;
 			}
-			console.log(this.qst[i], "   ", i);
+			//console.log(this.qst[i], "   ", i);
 			if (this.qst[i] === false) {
 				isFind = true;
 				nextFieldNum = i;
@@ -89,14 +107,22 @@
 
 		};
 		Inputer.prototype.submit = function () {
-			var txtArea = document.getElementById('main-fastInput--ta');
-			var outElem = $(".main-form__qstion--ta").eq(this.curr_field );
-			//todo verify
-			this.qst[this.curr_field] = true;
-			outElem.val(txtArea.value);
-			txtArea.value = "";
-
-			this.showNextQst();
+			console.log(this.answered);
+			console.log(this.answered == 15);
+			if (this.answered == 15) {
+				location.hash = "#lastWay";
+			}else{
+				var outElem = $(".main-form__qstion--ta").eq(this.curr_field );
+				//todo verify
+				this.qst[this.curr_field] = true;
+				outElem.val(this.txtArea.value);
+				outElem.trigger("propertychange");
+				this.txtArea.focus();
+				this.txtArea.value = "";
+				setCaretToPos(this.txtArea,0);
+				this.showNextQst();	
+			}
+			
 		};
 		Inputer.prototype.hideInputer = function () {
 			this.inputerDiv.hidden = true;
@@ -108,7 +134,7 @@
 			var nextFieldNum = this.nextField();
 			if (nextFieldNum > -1) {
 				var outElem = document.getElementById('main-fastInput_lbl');
-				outElem.innerHTML = $(".main-form__qstion--lbl").eq(nextFieldNum).text();
+				outElem.innerHTML = $(".main-form__qstion--lbl").eq(nextFieldNum).html();
 				$(".main-fastInput__taWrap").show();
 
 			}else{
@@ -123,10 +149,27 @@
 	window.onload = function init(){
 		var inputerDiv = document.getElementById('Inputer');
 		var sendBtn = document.getElementById('main-fastInput--sendBtn');
-		var inputer = new Inputer(inputerDiv, sendBtn,"abra",0,0,3);
+		var inputer = new Inputer(inputerDiv, sendBtn,"abra",0,0,15);
 		inputer.showInputer();
 		inputer.showNextQst();
 		inputer.listen();
 	};	
+
+	function setSelectionRange(input, selectionStart, selectionEnd) {
+	  	if (input.setSelectionRange) {
+	    	input.focus();
+	    	input.setSelectionRange(selectionStart, selectionEnd);
+	  	}else if (input.createTextRange) {
+		    var range = input.createTextRange();
+		    range.collapse(true);
+		    range.moveEnd('character', selectionEnd);
+		    range.moveStart('character', selectionStart);
+		    range.select();
+	  }
+	}
+
+	function setCaretToPos (input, pos) {
+	  setSelectionRange(input, pos, pos);
+	}
 
 }());

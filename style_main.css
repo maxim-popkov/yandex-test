@@ -117,7 +117,13 @@ h1, h2, h3{
 	background-color: #eef;
 	margin-bottom: 3px;
 }
-.main-form__qstion_taWrap{
+.main-form__lastQstion{
+	box-shadow:  3px 3px 15px 2px  rgba(0,0,0,0.2);
+	border-radius: 4px;
+	background-color: #eef;
+	margin-bottom: 3px;
+}
+.main-form__lastQstion {
 
 }
 .main-form__qstion--req{
@@ -131,4 +137,7 @@ h1, h2, h3{
 .main-form__qstion:hover{
 	box-shadow:  3px 3px 15px 10px  rgba(0,0,0,0.2);
 	background-color: #ffc;
+}
+.footer{
+	height: 200px;
 }
