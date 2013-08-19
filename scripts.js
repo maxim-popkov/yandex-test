@@ -25,7 +25,7 @@
 		}
 		Inputer.prototype.listen = function(){
 			
-			this.sendBtn.addEventListener("click",this.submit.bind(this, false));
+			addEvent("click", this.sendBtn, this.submit.bind(this, false));
 			$(".main-form__qstion--ta").bind("input propertychange", this.txtChanged.bind(this));
 			$(document).keypress(this.pressEnter.bind(this));
 		};
@@ -76,7 +76,7 @@
 			var outLbl = document.getElementById("main-fastInput_lbl");
 			//this.sendBtn.innerHTML = "в Яндекс!";
 			$(this.sendBtn).hide();
-			outLbl.innerHTML = "<a href='#lastWay'>Отправить данные в Яндекс</a>"; 
+			outLbl.innerHTML = "<a style='margin:auto;' href='#lastWay'>Отправить данные в Яндекс</a>"; 
 			//////////////
 			$('a').click(function(){
     				$('html, body').animate({
@@ -158,6 +158,9 @@
 		inputer.listen();
 	};	
 
+
+	//////Костыли////////
+
 	function setSelectionRange(input, selectionStart, selectionEnd) {
 	  	if (input.setSelectionRange) {
 	    	input.focus();
@@ -173,6 +176,15 @@
 
 	function setCaretToPos (input, pos) {
 	  setSelectionRange(input, pos, pos);
+	}
+	function addEvent(evnt, elem, func) {
+ 		if (elem.addEventListener)  // W3C DOM
+    		  elem.addEventListener(evnt,func,false);
+   		else if (elem.attachEvent) { // IE DOM
+      		elem.attachEvent("on"+evnt, func);
+  		}else { // No much to do
+      		elem[evnt] = func;
+   		}
 	}
 	function ie8_BindInit(){
 		if (!Function.prototype.bind) {

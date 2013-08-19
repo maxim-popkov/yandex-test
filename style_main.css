@@ -4,49 +4,34 @@ body{
 h1, h2, h3{
 	font-family:"Georgia";
 	text-align: center;
+	font-style: normal;
 
 }
+.header{
+	margin: 10px 200px 10px 200px;
+	max-width: 520px; 
+}
 .header__logo{
-	max-width: 200px;
+	font-size: 1.5em;
+	margin: auto;
 }
-.header__logo h1{
-	font-size: 2.5em;
-	margin: 0px 0px 0px 0px;
-}
-.header__logo a:visited{
+.header__logo--a:visited{
 	color: black;
 }
 .red{
 	color: red;
 }
-.header{
-	max-width: 520px; 
-}
 .header__shri{
 	max-width: 380px;
-}
-.header__logo h3{
-	font-size: 1.25em;
-	margin: 0px 0px 0px 0px;
-	color: #f00;
-}
-.header__shri h2{
+	margin: auto;
 	font-size: 1.5em;
-	margin: 0px 0px 0px 0px;
 }
 .main{
 	min-width: 320px;
 	max-width: 520px; 
 	margin: 10px 200px 10px 200px;
 }
-.main__form_table textarea{
-	width: 100%;
-	max-width: 380px;
-}
 
-.main__form_table{
-
-}
 /******************/
 .main-fastInput{
 	box-shadow:  3px 3px 15px 2px  rgba(0,0,0,0.2);
@@ -117,15 +102,6 @@ h1, h2, h3{
 	background-color: #eef;
 	margin-bottom: 3px;
 }
-.main-form__lastQstion{
-	box-shadow:  3px 3px 15px 2px  rgba(0,0,0,0.2);
-	border-radius: 4px;
-	background-color: #eef;
-	margin-bottom: 3px;
-}
-.main-form__lastQstion {
-
-}
 .main-form__qstion--req{
 	color: red;
 	margin: 10px;
@@ -138,6 +114,17 @@ h1, h2, h3{
 	box-shadow:  3px 3px 15px 10px  rgba(0,0,0,0.2);
 	background-color: #ffc;
 }
+.main-form__lastQstion{
+	box-shadow:  3px 3px 15px 2px  rgba(0,0,0,0.2);
+	border-radius: 4px;
+	background-color: #eef;
+	margin-bottom: 3px;
+	padding: 3px 10px 10px 10px;
+}
+.main-form__lastQstion--inpt{
+	width: 97%
+}
+/************************/
 .footer{
 	height: 200px;
 }
