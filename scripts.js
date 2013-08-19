@@ -76,7 +76,7 @@
 			var outLbl = document.getElementById("main-fastInput_lbl");
 			//this.sendBtn.innerHTML = "в Яндекс!";
 			$(this.sendBtn).hide();
-			outLbl.innerHTML = "<a style='margin:auto;' href='#lastWay'>Отправить данные в Яндекс</a>"; 
+			outLbl.innerHTML = "<a href='#lastWay'>Отправить данные в Яндекс</a>"; 
 			//////////////
 			$('a').click(function(){
     				$('html, body').animate({
@@ -107,8 +107,8 @@
 
 		};
 		Inputer.prototype.submit = function () {
-			console.log(this.answered);
-			console.log(this.answered == 15);
+			//console.log(this.answered);
+			//console.log(this.answered == 15);
 			if (this.answered == 15) {
 				location.hash = "#lastWay";
 			}else{
