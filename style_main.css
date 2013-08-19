@@ -72,19 +72,37 @@ h1, h2, h3{
 	margin: 3px 0px 3px 0px;
 }
 .main-fastInput__status{
-
+	height: 30px;
 }
 .main-fastInput__status--table{
 	width: 100%;
+	height: 100%;
+	margin-top: 3px;
+	text-align: center;
+	font-weight: bold;
+	font-size: normal;
+	color: #000080;
+	padding: 0px;
+	table-layout: fixed;
+}
+.main-fastInput__status--table tr{
+	margin: 0px;
+	min-height: 24px;
+}
+
+.main-fastInput__status--tdOk {
+	background-color: #000033;
+	color: #ccff33;
+	border-radius: 4px;
+
+
+}
+.main-fastInput__status--td{
 	background-color: #B2DFFF;
 	border-radius: 4px;
 	box-shadow: inset  3px 3px 10px 2px  rgba(0,0,0,0.2);
-	text-align: center;
-	margin-top: 3px;
+	
 }
-.main-fastInput__status--table {
-}
-
 /*********************/
 .main-form__qstion_tbl {
 	width: 100%;
@@ -108,6 +126,7 @@ h1, h2, h3{
 }
 .main-form__qstion--ta{
 	width: 97%;
+	max-width: 396px;
 }
 .main-form__qstion:hover{
 	box-shadow:  3px 3px 15px 10px  rgba(0,0,0,0.2);
